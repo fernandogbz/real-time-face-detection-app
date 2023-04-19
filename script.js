@@ -1,5 +1,7 @@
 const video = document.getElementById("video");
 
 function startVideo() {
-  navigator.mediaDevices.getUserMedia()
+  navigator.mediaDevices.getUserMedia(
+    {video: {} },
+  )
 }
