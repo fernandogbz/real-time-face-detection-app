@@ -1,8 +1,11 @@
 const video = document.getElementById("video");
 
 function startVideo() {
-  navigator.mediaDevices.getUserMedia(
+  navigator.getUserMedia(
     {video: {} },
     stream => video.srcObject = stream,
+    error => console.error(error)
   )
 };
+
+startVideo()
