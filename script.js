@@ -4,8 +4,11 @@ const video = document.getElementById("video");
 //Load the different models
 // This is done asynchronously, so 'Promise.all' is going to run all these calls in parallel, to make it much quicker to execute
 Promise.all([
-  
-  
+  //Here pass an array of all of the promises
+  faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('/models'),
 ])
 
 //Hooking up the webcam to the video element
