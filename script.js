@@ -9,7 +9,7 @@ Promise.all([
   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
   faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
   faceapi.nets.faceExpressionNet.loadFromUri('/models'),
-])
+]).then(startVideo); // After all the models load, then it'll start the video
 
 //Hooking up the webcam to the video element
 function startVideo() {
