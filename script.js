@@ -44,6 +44,11 @@ video.addEventListener('play', () => {
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
     //Draw the detections in the canvas
     faceapi.draw.drawDetections(canvas, resizedDetections);
+    // Here I add more details
+    //FaceLandmarks
+    faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+    //Expressions
+    faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
   }, 100)
 });
 
