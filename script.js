@@ -38,6 +38,8 @@ video.addEventListener('play', () => {
     console.log(detections);
     //ResizedDetections is gonna make it so that the boxes that show up around the face are properly sized for the video element that I'm using as well as for the canvas
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
+    //To clear the canvas
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
     //Draw the detections in the canvas
     faceapi.draw.drawDetections(canvas, resizedDetections);
   }, 100)
