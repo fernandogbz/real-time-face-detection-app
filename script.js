@@ -27,7 +27,7 @@ function startVideo() {
 video.addEventListener('play', () => {
   // Set interval cause the code is gonna run multiple times in a row, asynchronous cause is an asynchronous library
   setInterval(async () => {
-    // Detection is going to await the faceapi, it's going to get all the faces inside of the webcam image, we're going to do this every 100 miliseconds
+    // Detections is going to await the faceapi, it's going to get all the faces inside of the webcam image, we're going to do this every 100 miliseconds
     const detections = await faceapi.detectAllFaces() 
   }, 100)
 })
