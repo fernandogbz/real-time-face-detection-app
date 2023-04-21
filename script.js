@@ -23,4 +23,9 @@ function startVideo() {
   )
 };
 
+// Event Listener for when the video starts playing
+video.addEventListener('play', () => {
+  console.log("video playing");
+})
+
 startVideo()
