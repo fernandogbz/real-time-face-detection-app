@@ -30,12 +30,15 @@ video.addEventListener('play', () => {
   //Add that canvas to the screen
   document.body.append(canvas);
   //Get the display size of our current video
-  const displaySize = { width: video.width, height: video.height}
+  const displaySize = { width: video.width, height: video.height};
   // Set interval cause the code is gonna run multiple times in a row, asynchronous cause is an asynchronous library
   setInterval(async () => {
     // Detections is going to await the faceapi, it's going to get all the faces inside of the webcam image, we're going to do this every 100 miliseconds
-    const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions() //Inside of here I pass the video element, what type of library we're gonna use to detect the faces and what we want to detect this faces with
+    const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions(); //Inside of here I pass the video element, what type of library we're gonna use to detect the faces and what we want to detect this faces with
+    console.log(detections);
+    //ResizedDetections is gonna make it so that the boxes that show up around the face are properly sized for the video element that I'm using as well as for the canvas
+    const resizedDetections = faceapi.resizeResults(detections, displaySize);
   }, 100)
-})
+});
 
 startVideo()
