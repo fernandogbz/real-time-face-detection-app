@@ -29,6 +29,8 @@ video.addEventListener('play', () => {
   const canvas = faceapi.createCanvasFromMedia(video);
   //Add that canvas to the screen
   document.body.append(canvas);
+  //Get the display size of our current video
+  const displaySize = { width: video.width, height: video.height}
   // Set interval cause the code is gonna run multiple times in a row, asynchronous cause is an asynchronous library
   setInterval(async () => {
     // Detections is going to await the faceapi, it's going to get all the faces inside of the webcam image, we're going to do this every 100 miliseconds
